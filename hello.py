@@ -1,1 +1,2 @@
-print(45+32)
+#!/usr/bin/env python3
+print("hello world!")

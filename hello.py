@@ -14,6 +14,6 @@ elif current_language =="it_IT":
     msg = "Ciao,Mondo!" 
 
 print(msg)
-print("commit push git ")
+
 
 

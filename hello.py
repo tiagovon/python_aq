@@ -2,7 +2,7 @@
 
 import os
 
-lang = os.getenv("LANG")
+lang = os.getenv("LANG","en_US")
 
 current_language = lang[:5]
 
@@ -14,5 +14,6 @@ elif current_language =="it_IT":
     msg = "Ciao,Mondo!" 
 
 print(msg)
+print("commit push git ")
 
 

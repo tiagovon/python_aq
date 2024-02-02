@@ -26,28 +26,48 @@ n2: 4
 """
 
 import sys
-
-valores = sys.argv[1:]
-
-if valores:
-    operaçao = valores[0]
-    n1=int(valores[1])
-    n2=int(valores[2])
-else:
-    operaçao = input("operaçao: ")
-    n1 = int(input("n1: "))
-    n2 =int(input("n2: "))
+arguments = sys.argv[1:]
 
 
-print(f"{operaçao} {n1} {n2}")
+if not arguments:
+    operation = input("operação:")
+    n1 = input("n1:")
+    n2 = input("n2:")
+    arguments = [operation, n1, n2]
+elif len(arguments) != 3:
+    print("Número de argumentos inválidos")
+    print("ex: sum 5 5")
+    sys.exit(1)
 
-if operaçao == "sum":
-    print(n1 + n2)
-elif operaçao == "sub":
-    print(n1 - n2)
-elif operaçao == "mult":
-    print(n1 * n2)
-elif operaçao == "div" :
-    print(n1 / n2)
-else:
-    print("ERRO")
+operation, *nums = arguments
+
+valid_operations = ("sum", "sub", "mul", 'div')
+if operation not in valid_operations:
+    print("Operação inválida")
+    print(valid_operations)
+    sys.exit(1)
+
+validated_nums = []
+for num in nums:
+    if not num.replace(".", "").isdigit():
+        print(f"Numero inválido {num}")
+        sys.exit(1)
+    if "." in num:
+        num = float(num)
+    else:
+        num = int(num)
+    validated_nums.append(num)
+    
+n1, n2 = validated_nums
+
+
+if operation == "sum":
+    result = n1 + n2
+elif operation == "sub":
+    result = n1 - n2
+elif operation == "mul":
+    result = n1 * n2
+elif operation == "div":
+    result = n1 / n2
+
+print(f"O resultado é {result}")

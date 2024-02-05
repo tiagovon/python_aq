@@ -24,8 +24,9 @@ n1: 5
 n2: 4
 9
 """
-
+import os
 import sys
+
 arguments = sys.argv[1:]
 
 
@@ -69,5 +70,11 @@ elif operation == "mul":
     result = n1 * n2
 elif operation == "div":
     result = n1 / n2
+
+path = os.curdir
+filepath = os.path.join(path,"prefixcalc.log")
+
+with open(filepath, "a") as file_:
+        file_.write(f"{operation},{n1},{n2}={result}")
 
 print(f"O resultado é {result}")

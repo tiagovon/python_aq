@@ -31,6 +31,19 @@ temp entre 0 e 10: Frio
 
 temp <0: ALERTA: Frio extremo_
 
+ex 3: 
+Faça um programa que pede ao usuário que digite uma ou
+mais palavras e imprime cada uma das palavras
+com suas vogais duplicadas.
+
+ex:
+
+python repete_vogal.py
+'Digite uma palavra (ou enter para sair):' Python
+'Digite uma palavra (ou enter para sair):' Bruno
+'Digite uma palavra (ou enter para sair):' <enter>
+Pythoon
+Bruunoo
 """
 #!usr/bin/env
 
@@ -43,10 +56,10 @@ temp <0: ALERTA: Frio extremo_
     
 #ex 2 
 
-import sys
-import logging
+#    import sys
+#    import logging
 
-log = logging.Logger("alerta")
+#    log = logging.Logger("alerta")
 
 #    def valores():
 #        try:
@@ -63,24 +76,37 @@ log = logging.Logger("alerta")
 
 
 
-  #  if temperatura > 45:
-  #       print("ALERTA!!! Perigo calor extremo")
- #   elif temperatura*3 >= umidade:
- #        print("ALERTA!!! Perigo de calor úmido")
- #   elif temperatura < 30 and temperatura > 10:
- #        print("normal")
+#    if temperatura > 45:
+#         print("ALERTA!!! Perigo calor extremo")
+#    elif temperatura*3 >= umidade:
+#         print("ALERTA!!! Perigo de calor úmido")
+#    elif temperatura < 30 and temperatura > 10:
+#         print("normal")
 #   elif temperatura < 10 and temperatura > 0:
 #         print("frio")
 #    elif temperatura < 0:
 #     print("frio extremo")
 
-
-
-for letra in "tiago":
-    print(letra)
-
-
-
+ 
+loop = True
+while loop:
+    aswer = input('Digite uma palavra (ou enter para sair):' )
+    if aswer == "":
+        loop = False
+    else:
+        voglas = ("a","e","i","o","u")
+        list = []
+        
+        for letras in aswer:
+            list.append(letras)
+            if letras in voglas:
+                 list.append(letras)
+            else:
+                continue    
+        
+        final = "".join(list)
+        print(final)  
+    
 
 
 

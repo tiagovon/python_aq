@@ -87,28 +87,25 @@ Bruunoo
 #    elif temperatura < 0:
 #     print("frio extremo")
 
- 
+words = []
 loop = True
 while loop:
     aswer = input('Digite uma palavra (ou enter para sair):' )
     if aswer == "":
         loop = False
-    else:
-        voglas = ("a","e","i","o","u")
-        list = []
-        
-        for letras in aswer:
-            list.append(letras)
-            if letras in voglas:
-                 list.append(letras)
-            else:
-                continue    
-        
-        final = "".join(list)
-        print(final)  
-    
+    voglas = "aeiouAEIOU"
+    final_word = ""
+    for letras in aswer:
+    #TODO: FUNÇAO funçao
+         if letras in voglas:
+            final_word += letras * 2 
+         else:
+            final_word += letras      
+           
+    words.append(final_word)
 
-
+for word in words:
+    print(word)
 
 
 

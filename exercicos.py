@@ -44,6 +44,46 @@ python repete_vogal.py
 'Digite uma palavra (ou enter para sair):' <enter>
 Pythoon
 Bruunoo
+
+ex 4
+
+Faça um programa de terminal que exibe so usuário uma
+listas dos quartos disponiveis para alugar e o preço de
+cada quarto, esta informação está disponível en us arquivo
+de texto separado por virgulas.
+
+quartos.txt
+
+a codigo, nome, preço
+
+1. Suíte Master, 500
+
+2. Quarto Familia, 200
+
+3, Quarto Individual, 108
+
+4, Quarto Simples, 50
+
+O programa pergunta ao usuário o nome, qual o número do 
+quarto a ser reservado e a quantidade de dias e no 
+final exibe o valor estimado a ser pago.
+
+O programa deve salvar esta escolha em outro arquivo contendo
+as reservas
+
+reservas.txt
+
+#cliente, quarto, dias
+
+Bruno, 3,12
+
+Se outro usuário tentar reservar o mesmo quarto o 
+programa deve exibir una mensagem informando que já está
+reservado.
+
+
+
+
 """
 #!usr/bin/env
 
@@ -87,35 +127,71 @@ Bruunoo
 #    elif temperatura < 0:
 #     print("frio extremo")
 
-words = []
-loop = True
-while loop:
-    aswer = input('Digite uma palavra (ou enter para sair):' )
-    if aswer == "":
-        loop = False
-    voglas = "aeiouAEIOU"
-    final_word = ""
-    for letras in aswer:
+#words = []
+#loop = True
+#while loop:
+#    aswer = input('Digite uma palavra (ou enter para sair):' )
+#    if aswer == "":
+#        loop = False
+#    voglas = "aeiouAEIOU"
+#   final_word = ""
+#    for letras in aswer:
     #TODO: FUNÇAO funçao
-         if letras in voglas:
-            final_word += letras * 2 
-         else:
-            final_word += letras      
-           
-    words.append(final_word)
+#        final_word += letras * 2 if letras in voglas else letras
+#   words.append(final_word)
 
-for word in words:
-    print(word)
+#print(*words , sep="\n")
 
+#ex4
 
+import os
+import sys
 
 
+path = os.curdir
+filepath =os.path.join(path,"quartos.txt")
+arquivopath = os.path.join(path,"reservas.txt")
+
+dic_dados = {}
+dic_num = {}
+
+for line in  open(filepath):
+    numero , quarto , preço  = line.split(",")
+    print(f"temos o/a {quarto} de numero: {numero} "  
+     f"com o preço de {preço}")
+    dic_dados[quarto] = int(preço)
+    dic_num[numero] = {quarto:int(preço)}
 
 
+nome_usr = input("seu nome ")
+numero_user = input("qual e o numero do quarto que "
+"voce quer resevar? ")
+
+numeros_de_quartos = []
+for line in open(arquivopath):
+        nome ,  numero  , dias = line.split(",")
+        numeros_de_quartos.append(int(numero))
+if int(numero_user) in numeros_de_quartos:
+        print("esse quarto ja esta resevado")
+        sys.exit(1)   
+
+numeros_de_dias = input("quantos dias voce quer passar? ")
 
 
+for keys in dic_num[numero_user]:
+    preço_user = dic_dados[keys]
 
+valor = preço_user * int(numeros_de_dias)
 
+print(f"o valor vai ficar {valor}")
+
+with open(arquivopath,"a") as arquivo:
+    arquivo.write(nome_usr + ",")
+    arquivo.write(numero_user + ",")
+    arquivo.write(numeros_de_dias + "\n")
+#   reservas.txt
+
+#cliente, quarto, dias
 
 
 

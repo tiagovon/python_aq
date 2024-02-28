@@ -1,0 +1,4 @@
+tech,oi meu nome e tiago e eu estou estudando python
+oi,oi meu nome e tiago
+magic,magic e legal
+sekiro,sekiro e dificil

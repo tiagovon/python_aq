@@ -31,6 +31,16 @@ temp entre 0 e 10: Frio
 
 temp <0: ALERTA: Frio extremo_
 
+ex3
+
+
+
+
+
+
+
+
+
 """
 #!usr/bin/env
 
@@ -65,7 +75,7 @@ umidade = valores()
 
 if temperatura > 45:
     print("ALERTA!!! Perigo calor extremo")
-if temperatura*3 >= umidade:
+elif temperatura*3 >= umidade:
     print("ALERTA!!! Perigo de calor úmido")
 elif temperatura < 30 and temperatura > 10:
     print("normal")

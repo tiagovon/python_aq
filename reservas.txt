@@ -1,0 +1,4 @@
+tiago,4,2
+bruno,2,5
+cris,1,4
+pedro,3,4

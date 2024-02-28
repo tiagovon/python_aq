@@ -1,0 +1,7 @@
+title:Meu post
+tags:texh,geral
+publishes:1
+---
+este e o meu post
+aqui tem texto e conteudo 
+ect ect etc

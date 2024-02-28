@@ -37,9 +37,9 @@ def ask_user (ask_color = False , ask_name = False):
     if ask_color:
         input("qual e a cor")
 
-ask_user(True,True )
+#ask_user(True,True )
 
-ask_user(True)
+#ask_user(True)
 
 
 tiago = "tiago"
@@ -70,4 +70,56 @@ def valor(a,b,c,*resto):
 def sei_la(b,c,a,*arg ,k="tiago",**keargs):
     print(a+c+b)
     print(keargs)
-sei_la(1,3,4,5,3,53,3,k="bruno",jh=2)
+#sei_la(1,3,4,5,3,53,3,k="bruno",jh=2)
+
+
+def faz_algo(valor,funçao):
+    valor = funçao(valor)
+    print(valor)
+
+
+def aumenta(text):
+    return text.upper()
+
+
+faz_algo("tiaGo",aumenta)
+
+faz_algo(10,lambda numero : numero * 3)
+
+names = ["b","tiago","bruno","joao","bernado","ana"]
+#print(sorted(names , key=len))
+
+#print(list(filter(lambda name: name[0].lower()=="b",names)))
+
+
+
+#operaçao = input("operaçao:sum , sub , mult e div ").strip()
+#n1 = input("n1:")
+#n2 = input("n2:")
+
+
+operaçoes = {
+    "sum":lambda a, b: a + b,
+    "sub":lambda a, b: a - b,
+    "mult":lambda a, b: a * b,
+    "div":lambda a, b: a / b,
+}
+
+resultado = operaçoes[operaçao](int(n1),int(n2))
+#print(resultado)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

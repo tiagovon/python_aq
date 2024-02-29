@@ -103,16 +103,16 @@ reservado.
 
 #    def valores():
 #        try:
-#             valor = float(input("qual e o valor?: ").strip())
-        
+#             temperatura = float(input("qual e a temperatura?: ").strip())
+              umidade =  float(input("qual e a umidade?: ").strip())
 #        except ValueError:
 #             log.error("valor errado,tente um numero")
 #             sys.exit(1)
-#       return valor
+#        return temperatura umidade
 
 
-#    temperatura = valores()
-#    umidade = valores()
+#    temperatura , umidade = valores()
+#   
 
 
 
